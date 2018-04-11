@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,31 @@ public class HomeController {
     public String login() {
         return "/login";
     }
+
+    @RequestMapping(value = "/headhtml", method = RequestMethod.GET)
+    public String index1() {
+        return "/head";
+    }
+    @RequestMapping(value = "/lefthtml", method = RequestMethod.GET)
+    public String index2() {
+        return "/left";
+    }
+    @RequestMapping(value = "/mainhtml", method = RequestMethod.GET)
+    public String index3() {
+        return "/main";
+    }
+
+    @RequestMapping("member-list")
+    public String member(){
+        SimpleAuthenticationInfo sim=new SimpleAuthenticationInfo();
+
+        return "/member-list";
+    }
+    @RequestMapping("user-list")
+    public String member1(){
+        return "/user-list";
+    }
+
 
     /**
      * 登录入口
